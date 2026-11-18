@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(titre)">
+  <meta charset="UTF-8">
+  <title th:text="${titre}">Titre</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<nav th:fragment="menu"> ... vos liens ... </nav>
+<footer th:fragment="footer"> ... </footer>
+</body>
+</html>
+
+<head th:replace="~{fragments/layout :: head('Mes recettes')}"></head>
+<body>
+<nav th:replace="~{fragments/layout :: menu}"></nav>
+<!-- contenu propre a la page -->
+<footer th:replace="~{fragments/layout :: footer}"></footer>
+</body>
